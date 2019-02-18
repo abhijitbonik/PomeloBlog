@@ -4,3 +4,5 @@ venv/
 *.pyc
 .vscode/
 *.db
+__pycache__/
+*.py[cod]
