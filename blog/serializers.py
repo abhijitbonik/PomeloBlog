@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Blog
+from .models import Blog, states
 
 
 class BlogSerializer(serializers.ModelSerializer):
@@ -24,7 +24,6 @@ class BlogSerializer(serializers.ModelSerializer):
 			body =validated_data.get('body'),
 			image =validated_data.get('image'),
 			created_by = self.context['request'].user,
-			status =validated_data.get('status')
 		)
 		return obj
 

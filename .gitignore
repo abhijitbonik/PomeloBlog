@@ -1,8 +1,18 @@
-# node.js
-node_modules/
-venv/
-*.pyc
-.vscode/
-*.db
 __pycache__/
 *.py[cod]
+.env
+venv/
+media/blog
+*.sqlite3
+*.swn
+*.swo
+*.swp
+*.swm
+*.db
+
+src/
+.vscode/
+*.pyc
+
+.DS_Store/
+node_modules/

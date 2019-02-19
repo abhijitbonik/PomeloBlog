@@ -20,5 +20,5 @@ class Blog(models.Model):
 	created_by = models.ForeignKey(User,on_delete=models.CASCADE, related_name='blog_author')
 	published_on=models.DateTimeField(null=True)
 	views = models.PositiveIntegerField(default=0)
-	status = models.CharField(max_length=50, choices = states)
+	status = models.CharField(default='Draft', max_length=50, choices = states)
 	category = models.ForeignKey('categories.Category', null=True)
