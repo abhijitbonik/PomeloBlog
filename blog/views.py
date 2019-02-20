@@ -18,3 +18,8 @@ class BlogRUDApiView(generics.RetrieveUpdateDestroyAPIView):
 
 	def get_queryset(self):
 		return Blog.objects.all()
+
+	def retrieve(self, request, *args, **kwargs):
+		response = super().retrieve(request, *args, **kwargs)
+		response['foo'] = 'bar'
+		return response
