@@ -10,7 +10,6 @@ media/blog
 *.swm
 *.db
 
-src/
 .vscode/
 *.pyc
 
