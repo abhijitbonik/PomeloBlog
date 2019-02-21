@@ -11,7 +11,7 @@ class Menu extends Component {
             <div className="navbar-inner">
                 <div className="container">
                 <Link className="brand logo" to="/">
-						<img src="assets/img/logo.png" alt="" />
+						        <img src="assets/img/logo.png" alt="" />
                         </Link>
                     <div>
                         <nav>
@@ -20,6 +20,9 @@ class Menu extends Component {
                             <li className="dropdown success">
                                     <Link to="/">
                                     <i className="icon-home icon-white"></i>Blogs</Link>
+                                        <ul class="dropdown-menu">
+                                          <li><Link to="/blog/create">Create Blog</Link></li>
+                                        </ul>
                                     </li>
 
                             </ul>

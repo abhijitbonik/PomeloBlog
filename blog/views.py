@@ -11,7 +11,7 @@ class BlogCreateApiView(generics.CreateAPIView):
 
 class BlogListApiView(generics.ListCreateAPIView):
 	serializer_class = BlogSerializer
-	queryset = Blog.objects.all()
+	queryset = Blog.objects.order_by('-created_at')
 
 class BlogRUDApiView(generics.RetrieveUpdateDestroyAPIView):
 	serializer_class = BlogSerializer

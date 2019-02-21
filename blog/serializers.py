@@ -16,7 +16,7 @@ class BlogSerializer(serializers.ModelSerializer):
 			'views',
 			'status',
 		]
-		read_only_fields = ('pk','created_at','created_by','published_on',)
+	created_by = serializers.ReadOnlyField(source='created_by.username')
 
 	def create(self, validated_data):
 		obj = Blog.objects.create(

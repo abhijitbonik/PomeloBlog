@@ -70,7 +70,7 @@ class BlogCreate extends Component {
             Submit
           </Button>
           </Form.Group>
-      </Form> 
+      </Form>
       </div>    
       );
   }

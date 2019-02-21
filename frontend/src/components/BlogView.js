@@ -51,9 +51,9 @@ class BlogView extends Component {
                 <div className="clearfix"></div>
                 <img src="assets/img/dummies/blog1.jpg" alt="" />
                 <ul className="post-meta">
-                  <li className="first"><i className="icon-user"></i> <span><a href="#">John doe</a></span></li>
-                  <li><i className="icon-list-alt"></i> <span><a href="#">Web design</a></span></li>
-                  <li className="last"><i className="icon-tags"></i> <span><a href="#">Design</a>, <a href="#">Blog</a>, <a href="#">Web page</a>, <a href="#">Clean</a></span></li>
+                  <li className="first"><i className="icon-user"></i> <span><a href="#">{item.created_by}</a></span></li>
+                  <li><i className="icon-list-alt"></i> <span><a href="#">{item.status}</a></span></li>
+                  <li className="last"><i className="icon-tags"></i> <span><a href="#">{item.created_at}</a>, <a href="#">Blog</a>, <a href="#">Web page</a>, <a href="#">Clean</a></span></li>
                 </ul>
                 <div className="clearfix"></div>
                 <p>
