@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
@@ -49,38 +46,32 @@ class BlogCreate extends Component {
       return  <Redirect  to={`/blog/${this.state.pk}`}/>
     }
       return (
-        <Container>
-        <Row>
-          <Col>
-          
-          <Form onSubmit={this.handleBlogSubmit}>
-          <Form.Group controlId="text">
+        <div className="span8">
+          <Form className="" onSubmit={this.handleBlogSubmit}>
+          <Form.Group className= "span4" controlId="text">
             <Form.Label>Title</Form.Label>
-            <Form.Control type="text" 
+            <Form.Control type="text" className="input-block-level"
             type="text" 
             name="title" 
             value={this.state.title} 
             onChange={this.handleBlogChange} 
             placeholder="Title" />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
           </Form.Group>
-          <Form.Group controlId="exampleForm.ControlTextarea1">
+          <Form.Group className= "span4" controlId="textarea">
           <Form.Label>Body</Form.Label>
-          <Form.Control as="textarea" rows="3" 
+          <Form.Control as="textarea" rows="3" className="input-block-level"
                            name="body" 
                            value={this.state.body} 
             onChange={this.handleBlogChange} 
                        />
         </Form.Group>
-          <Button variant="primary" type="submit">
+        <Form.Group className= "span4" controlId="submit">
+          <Button className="btn btn-medium btn-success" variant="primary" type="submit">
             Submit
           </Button>
-      </Form>
-          </Col>
-        </Row>
-      </Container>      
+          </Form.Group>
+      </Form> 
+      </div>    
       );
   }
 

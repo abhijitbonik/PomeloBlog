@@ -1,36 +1,14 @@
 import React, { Component } from "react";
-import {
-  Route,
-  NavLink,
-	BrowserRouter,
-	Switch
-} from "react-router-dom";
-import Blogs from "./Blogs";
-import BlogCreate from "./BlogCreate";
-import BlogView from "./BlogView";
-
+import Routes from "./Routes"
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 class App extends Component {
 	render() {
 	  return (
-		<BrowserRouter>
-		  <div>
-			<h1>Simple SPA</h1>
-			<ul className="header">
-
-				<li><NavLink exact to="/">BlogCreate</NavLink></li>
-			  <li><NavLink  to="/blog">Blogs</NavLink></li>
-			  
-			</ul>
-			<div className="content">
-			  
-			<Route exact path="/" component={BlogCreate}/>
-				<Switch>
-        <Route exact path="/blog" component={Blogs}/>
-        <Route name="blogview" path='/blog/:id' component={BlogView}/>
-      </Switch>
-			</div>
-		  </div>
-		</BrowserRouter>
+		<div>
+			<Routes/>
+		</div>
 	  );
 	}
   }

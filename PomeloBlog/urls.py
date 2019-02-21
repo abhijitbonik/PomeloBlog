@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/blog/', include('blog.urls', namespace = 'blog-api')),
-    url(r'^', include('frontend.urls')),
+    url(r'^', include('frontend.urls', namespace ='frontend')),
 ]
 
 #router = routers.DefaultRouter()

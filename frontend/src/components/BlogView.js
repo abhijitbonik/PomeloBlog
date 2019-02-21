@@ -42,16 +42,31 @@ class BlogView extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div><Card style={{ width: '18rem' }}>
-        <Card.Img variant="top"  />
-        <Card.Body>
-          <Card.Title>{item.title}</Card.Title>
-          <Card.Text>
-            {item.body}
-          </Card.Text>
-          <Button variant="primary">Edit</Button>
-        </Card.Body>
-      </Card></div>
+        <div className="span8">
+              <article className="blog-post">
+                <div className="tooltip-demo headline">
+                  <h4>{item.title}</h4>
+                  <span className="comment"><a href="#" data-rel="tooltip" data-placement="top" title="4 Comments">4 comments</a></span>
+                </div>
+                <div className="clearfix"></div>
+                <img src="assets/img/dummies/blog1.jpg" alt="" />
+                <ul className="post-meta">
+                  <li className="first"><i className="icon-user"></i> <span><a href="#">John doe</a></span></li>
+                  <li><i className="icon-list-alt"></i> <span><a href="#">Web design</a></span></li>
+                  <li className="last"><i className="icon-tags"></i> <span><a href="#">Design</a>, <a href="#">Blog</a>, <a href="#">Web page</a>, <a href="#">Clean</a></span></li>
+                </ul>
+                <div className="clearfix"></div>
+                <p>
+                {item.body}
+                </p>
+                <blockquote>
+                  <p>
+                    Eos simul tritani gubergren et, te vel ullum commodo docendi, ne sea regione laoreet iracundia. His menandri quaestio ea. Ea congue volutpat has, cu vim delenit offendit ullamcorper. Ius at agam malorum suscipiantur, sit aliquid percipitur ei.
+                  </p>
+                </blockquote>
+
+              </article>
+        </div>
       );
     }
   }
@@ -59,3 +74,5 @@ class BlogView extends Component {
 
  
 export default BlogView;
+
+
