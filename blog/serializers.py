@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Blog, states
-
+from etherpad.views import Etherpad
 
 class BlogSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -21,14 +21,15 @@ class BlogSerializer(serializers.ModelSerializer):
 	def create(self, validated_data):
 		obj = Blog.objects.create(
 			title=validated_data.get('title'),
-			body =validated_data.get('body'),
-			image =validated_data.get('image'),
 			created_by = self.context['request'].user,
 		)
+		ether = Etherpad()
+		group = ether.create_ether_blog(obj)
 		return obj
 
 	def update(self, instance, validated_data):
+		ether = Etherpad()
 		instance.title = validated_data.get('title', instance.title)
-		instance.body = validated_data.get('body', instance.body)
+		instance.body = ether.getHTML(instance)
 		instance.image = validated_data.get('image', instance.image)
 		return instance

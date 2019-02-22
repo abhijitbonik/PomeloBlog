@@ -22,3 +22,4 @@ class Blog(models.Model):
 	views = models.PositiveIntegerField(default=0)
 	status = models.CharField(default='Draft', max_length=50, choices = states)
 	category = models.ForeignKey('categories.Category', null=True)
+	uuid = models.UUIDField(default=uuid.uuid4, editable=False)

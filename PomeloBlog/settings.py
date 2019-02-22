@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'frontend',
     'categories',
     'categories.editor',
+    'etherpad',
 ]
 
 MIDDLEWARE = [
