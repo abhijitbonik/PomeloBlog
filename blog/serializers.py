@@ -24,4 +24,5 @@ class BlogSerializer(serializers.ModelSerializer):
 		instance.title = validated_data.get('title', instance.title)
 		instance.body = ether.getHTML(instance)
 		instance.image = validated_data.get('image', instance.image)
+		instance.save()
 		return instance

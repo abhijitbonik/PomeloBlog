@@ -43,13 +43,13 @@ class BlogCreate extends Component {
   }
   else{
 
-          axios.post("http://10.129.132.103:8000/api/blog/detail/".concat(`${this.state.pk}/`), 
+          axios.put("http://10.129.132.103:8000/api/blog/detail/".concat(`${this.state.pk}/`), 
           {
             title: this.state.title,
           }
           )
           .then(res => {
-            this.setState({ pk:res.data.blog.pk, title: res.data.title, redirect:true});
+            this.setState({ pk:res.data.pk, title: res.data.title, redirect:true});
           })
 
     }
