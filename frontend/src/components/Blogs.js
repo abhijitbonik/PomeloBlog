@@ -13,8 +13,11 @@ class Blogs extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8000/api/blog/")
-      .then(res => res.json())
+    fetch("http://10.129.132.103:8000/api/blog/")
+      .then(res =>{
+        localStorage.setItem('result', res)
+        return res.json()
+      })
       .then(
         (result) => {
           this.setState({
@@ -34,7 +37,10 @@ class Blogs extends Component {
       )
   }
   sub(string){
-    return string.substring(0,150);
+    if(string){
+      return string.substring(0,150);
+    }
+    return string
   }
 
   humanize(time) {

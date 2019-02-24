@@ -20,7 +20,7 @@ class Menu extends Component {
                             <li className="dropdown success">
                                     <Link to="/">
                                     <i className="icon-home icon-white"></i>Blogs</Link>
-                                        <ul class="dropdown-menu">
+                                        <ul className="dropdown-menu">
                                           <li><Link to="/blog/create">Create Blog</Link></li>
                                         </ul>
                                     </li>

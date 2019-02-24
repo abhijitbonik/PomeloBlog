@@ -152,3 +152,7 @@ REST_FRAMEWORK = {
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CSRF_COOKIE_NAME = "csrftoken"
+
+SERVERURL = config('PAD_URL')
+APIURL = SERVERURL+"/api"
+APIKEY = config('PAD_API_KEY')

@@ -3,6 +3,7 @@ from .models import Blog, states
 from etherpad.views import Etherpad
 
 class BlogSerializer(serializers.ModelSerializer):
+	created_by = serializers.ReadOnlyField(source='created_by.username')
 	class Meta:
 		model = Blog
 		fields = [
@@ -16,16 +17,7 @@ class BlogSerializer(serializers.ModelSerializer):
 			'views',
 			'status',
 		]
-	created_by = serializers.ReadOnlyField(source='created_by.username')
-
-	def create(self, validated_data):
-		obj = Blog.objects.create(
-			title=validated_data.get('title'),
-			created_by = self.context['request'].user,
-		)
-		ether = Etherpad()
-		group = ether.create_ether_blog(obj)
-		return obj
+		read_only_fields = ('pk','created_at','published_on','views')
 
 	def update(self, instance, validated_data):
 		ether = Etherpad()
