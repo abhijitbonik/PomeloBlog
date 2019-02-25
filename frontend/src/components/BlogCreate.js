@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import FormControl from 'react-bootstrap/FormControl';
 import { Redirect } from 'react-router-dom';
-import Iframe from 'react-iframe'
+import IFrame from "./IFrame"
 
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.xsrfCookieName = "csrftoken";
@@ -74,14 +73,11 @@ class BlogCreate extends Component {
           </Form.Group>
           <Form.Group className= "span4" controlId="textarea">
           <Form.Label>Body</Form.Label>
-          <Iframe url={`${this.state.padurl}/p/${this.state.padid}`}
-          width="450px"
-          height="450px"
+          <IFrame src={`${this.state.padurl}/p/${this.state.padid}`}
+          height="600"
+          width="1200"
           id="iframe"
-          className="myClassname"
-          display="initial"
-          position="relative"
-          allowFullScreen/>
+          />
         </Form.Group>
         <Form.Group className= "span4" controlId="submit">
           <Button className="btn btn-medium btn-success" variant="primary" type="submit">
