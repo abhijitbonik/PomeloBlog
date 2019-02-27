@@ -13,7 +13,7 @@ class Blogs extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.129.132.103:8000/api/blog/")
+    fetch("http://localhost:8000/api/blog/")
       .then(res =>{
         localStorage.setItem('result', res)
         return res.json()

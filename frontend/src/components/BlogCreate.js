@@ -31,7 +31,7 @@ class BlogCreate extends Component {
     event.preventDefault();
 
     if(!this.state.created){
-          axios.post(`http://10.129.132.103:8000/api/blog/create/`, 
+          axios.post(`http://localhost:8000/api/blog/create/`, 
           {
             title: this.state.title,
           }
@@ -42,7 +42,7 @@ class BlogCreate extends Component {
   }
   else{
 
-          axios.put("http://10.129.132.103:8000/api/blog/detail/".concat(`${this.state.pk}/`), 
+          axios.put("http://localhost:8000/api/blog/detail/".concat(`${this.state.pk}/`), 
           {
             title: this.state.title,
           }

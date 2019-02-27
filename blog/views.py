@@ -24,7 +24,7 @@ class BlogCreateApiView(generics.CreateAPIView):
 			response= Response({
 				'blog': serializer.data,
 				'ether': etherobj.data,
-				'url': settings.SERVERURL
+				'url': settings.ETHER_URL
 			}, status=status.HTTP_201_CREATED)
 			response.set_cookie('sessionID', sessionid)
 			return response
