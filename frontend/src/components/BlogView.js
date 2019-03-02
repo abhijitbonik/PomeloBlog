@@ -12,7 +12,7 @@ class BlogView extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8000/api/blog/detail/".concat(`${this.props.match.params.id}/`))
+    fetch(`${process.env.REACT_APP_SERVER_API_URL}`+"blog/detail/".concat(`${this.props.match.params.id}/`))
       .then(res => res.json())
       .then(
         (result) => {

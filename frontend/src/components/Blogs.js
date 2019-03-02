@@ -13,7 +13,7 @@ class Blogs extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8000/api/blog/")
+    fetch(`${process.env.REACT_APP_SERVER_API_URL}`+"blog/")
       .then(res =>{
         localStorage.setItem('result', res)
         return res.json()

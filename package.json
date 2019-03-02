@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
+    "dev": "webpack  --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
     "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "dotenv": "^6.2.0",
+    "dotenv-webpack": "^1.7.0",
     "jquery": "^3.3.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
