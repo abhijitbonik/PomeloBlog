@@ -3,6 +3,7 @@ __pycache__/
 .env
 venv/
 media/blog
+media/images
 *.sqlite3
 *.swn
 *.swo
