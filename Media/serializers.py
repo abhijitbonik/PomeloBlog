@@ -10,5 +10,8 @@ class MediaSerializer(serializers.ModelSerializer):
 			'title',
 			'mediafile',
 			'latitude',
-			'longitude'
+			'longitude',
+			'created_at'
 		]
+
+		read_only_fields = ('pk','created_at')

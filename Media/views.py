@@ -24,3 +24,7 @@ class MediaUploadView(generics.CreateAPIView):
 	@method_decorator(csrf_exempt)
 	def dispatch(self, request, *args, **kwargs):
 		return super(MediaUploadView, self).dispatch(request, *args, **kwargs)
+
+class MediaListApiView(generics.ListCreateAPIView):
+	serializer_class = MediaSerializer
+	queryset = Media.objects.order_by('-created_at')
