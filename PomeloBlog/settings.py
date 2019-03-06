@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'categories',
     'categories.editor',
     'etherpad',
+    'Media',
 ]
 
 MIDDLEWARE = [
@@ -134,18 +135,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 CORS_ORIGIN_ALLOW_ALL=True
-
-REST_FRAMEWORK = {
-  'DEFAULT_AUTHENTICATION_CLASSES': (
-      'rest_framework.authentication.SessionAuthentication',
-      'rest_framework.authentication.TokenAuthentication',
-      'rest_framework.authentication.BasicAuthentication',
-    ),
-    
-    #'DEFAULT_RENDERER_CLASSES': (
-    #    'rest_framework.renderers.JSONRenderer',
-    #)
-}
 
 
 MEDIA_URL = '/media/'
